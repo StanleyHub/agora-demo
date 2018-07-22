@@ -9,7 +9,7 @@ services:
     links:
       - web:web
     ports:
-      - 443:443
+      - 8081:443
     volumes:
       - ./logs:/logs
       - ./nginx.conf:/etc/nginx/conf.d/mysite.template
