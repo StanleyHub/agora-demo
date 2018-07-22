@@ -15,7 +15,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/mysite.template
       - ./cert/214854153840834.pem:/etc/ssl/214854153840834.pem
       - ./cert/214854153840834.key:/etc/ssl/214854153840834.key
-      - ./cert/f6tFjN08Ue.txt:/root/f6tFjN08Ue.txt
+      - ./cert/f6tFjN08Ue.txt:/www/media/f6tFjN08Ue.txt
     environment:
      - NGINX_HOST=conference.p2m.net.cn
      - NGINX_PORT=80
