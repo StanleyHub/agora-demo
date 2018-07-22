@@ -1,4 +1,4 @@
-FROM node:8.11.3-alpine
+FROM node:latest
 RUN npm install -g yarn serve
 
 RUN mkdir -p /app
@@ -12,4 +12,4 @@ RUN yarn install --prod
 COPY . /app
 RUN yarn build
 
-CMD ["serve", "-p 8081", "-s", "build"]
+CMD ["serve", "-p", "80", "-s", "build"]

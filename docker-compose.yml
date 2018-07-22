@@ -13,7 +13,7 @@ services:
     volumes:
       - ./logs:/logs
       - ./nginx.conf:/etc/nginx/conf.d/mysite.template
-      - ./cert/214854153840834.crt:/etc/ssl/214854153840834.crt
+      - ./cert/214854153840834.pem:/etc/ssl/214854153840834.pem
       - ./cert/214854153840834.key:/etc/ssl/214854153840834.key
     environment:
      - NGINX_HOST=conference.p2m.net.cn
