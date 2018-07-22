@@ -18,4 +18,4 @@ const polyfill = (() => {
 })();
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
