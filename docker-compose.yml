@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  nginx:
+    image: nginx:latest
+    links:
+      - web:web
+    ports:
+      - 443:443
+    volumes:
+      - ./logs:/logs
+      - ./nginx.conf:/etc/nginx/conf.d/mysite.template
+      - ./cert/214854153840834.crt:/etc/ssl/214854153840834.crt
+      - ./cert/214854153840834.key:/etc/ssl/214854153840834.key
+    environment:
+     - NGINX_HOST=conference.p2m.net.cn
+     - NGINX_PORT=80
+    command: /bin/bash -c "cp -f /etc/nginx/conf.d/mysite.template /etc/nginx/nginx.conf && cat /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
